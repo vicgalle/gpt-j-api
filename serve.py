@@ -17,17 +17,16 @@ from typing import Optional
 
 app = FastAPI()
 params = {
-  "layers": 28,
-  "d_model": 4096,
-  "n_heads": 16,
-  "n_vocab": 50400,
-  "norm": "layernorm",
-  "pe": "rotary",
-  "pe_rotary_dims": 64,
-
-  "seq": 2048,
-  "cores_per_replica": 8,
-  "per_replica_batch": 1,
+    "layers": 28,
+    "d_model": 4096,
+    "n_heads": 16,
+    "n_vocab": 50400,
+    "norm": "layernorm",
+    "pe": "rotary",
+    "pe_rotary_dims": 64,
+    "seq": 2048,
+    "cores_per_replica": 8,
+    "per_replica_batch": 1,
 }
 
 per_replica_batch = params["per_replica_batch"]
@@ -43,9 +42,9 @@ params["optimizer"] = optax.scale(0)
 mesh_shape = (jax.device_count() // cores_per_replica, cores_per_replica)
 devices = np.array(jax.devices()).reshape(mesh_shape)
 
-maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ('dp', 'mp')))
+maps.thread_resources.env = maps.ResourceEnv(maps.Mesh(devices, ("dp", "mp")))
 
-tokenizer = transformers.GPT2TokenizerFast.from_pretrained('gpt2')
+tokenizer = transformers.GPT2TokenizerFast.from_pretrained("gpt2")
 
 total_batch = per_replica_batch * jax.device_count() // cores_per_replica
 
@@ -57,10 +56,12 @@ network.state = network.move_xmap(network.state, np.zeros(cores_per_replica))
 
 @app.post("/generate")
 async def generate(
-    context : Optional[str] = "In a shocking finding, scientists discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.",
-    token_max_length : Optional[int] = 512,
-    temperature : Optional[float] = 1.,
-    top_p : Optional[float] = 0.9
+    context: Optional[
+        str
+    ] = "In a shocking finding, scientists discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English.",
+    token_max_length: Optional[int] = 512,
+    temperature: Optional[float] = 1.0,
+    top_p: Optional[float] = 0.9,
 ):
     start = time.time()
 
@@ -72,19 +73,26 @@ async def generate(
     batched_tokens = np.array([padded_tokens] * total_batch)
     length = np.ones(total_batch, dtype=np.uint32) * len(tokens)
 
-    output = network.generate(batched_tokens, length, token_max_length, {"top_p": np.ones(total_batch) * top_p,
-                                                            "temp": np.ones(total_batch) * temperature})
+    output = network.generate(
+        batched_tokens,
+        length,
+        token_max_length,
+        {
+            "top_p": np.ones(total_batch) * top_p,
+            "temp": np.ones(total_batch) * temperature,
+        },
+    )
 
-    
     text = tokenizer.decode(output[1][0][0, :, 0])
 
-    response={}
-    response['model'] = 'GPT-J-6B'
-    response['compute_time'] = time.time() - start
-    response['text'] = text
-    response['prompt'] = context
+    response = {}
+    response["model"] = "GPT-J-6B"
+    response["compute_time"] = time.time() - start
+    response["text"] = text
+    response["prompt"] = context
 
     return response
 
-print ("GPT-J-6B serving!")
+
+print("GPT-J-6B serving!")
 uvicorn.run(app, host="0.0.0.0", port=5000)
