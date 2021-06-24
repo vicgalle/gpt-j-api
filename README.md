@@ -8,5 +8,8 @@ Just ssh into a TPU VM. This code was only tested on the v3-8 variants, which yo
 
 ```
 python3 -m pip install -r requirements.txt
+wget https://the-eye.eu/public/AI/GPT-J-6B/step_383500_slim.tar.zstd
+sudo apt install zstd
+tar -I zstd -xf step_383500_slim.tar.zstd
 python3 serve.py
 ```
