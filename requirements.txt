@@ -18,6 +18,6 @@ google-cloud-storage~=1.36.2
 smart_open[gcs]
 func_timeout
 ftfy
-fastapi
+fastapi==0.65.2
 uvicorn
-git+https://github.com/kingoflolz/mesh-transformer-jax.git@51c6e25540a58ce603177586212182ad1cb4fd87#egg=mesh-transformer
+git+https://github.com/kingoflolz/mesh-transformer-jax.git#egg=mesh-transformer
