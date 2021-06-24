@@ -20,4 +20,4 @@ func_timeout
 ftfy
 fastapi
 uvicorn
-git+https://github.com/kingoflolz/mesh-transformer-jax
+git+https://github.com/kingoflolz/mesh-transformer-jax.git@51c6e25540a58ce603177586212182ad1cb4fd87#egg=mesh-transformer
