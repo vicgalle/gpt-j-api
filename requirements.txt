@@ -10,7 +10,7 @@ optax==0.0.6
 git+https://github.com/deepmind/dm-haiku
 git+https://github.com/EleutherAI/lm-evaluation-harness/
 ray~=1.2.0
-jax~=0.2.12
+jax==0.2.12
 Flask~=1.1.2
 cloudpickle~=1.3.0
 tensorflow-cpu~=2.4.1
