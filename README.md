@@ -1,5 +1,5 @@
 # gpt-j-api
-A FastAPI server for the GPT-J language model
+A FastAPI server for the GPT-J language model. You can test and use the API at http://34.90.255.118:5000/docs
 
 
 ## Deployment
