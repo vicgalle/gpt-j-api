@@ -1,6 +1,34 @@
 # gpt-j-api
-A FastAPI server for the GPT-J language model. You can test and use the API at http://api.vicgalle.net:5000/docs
+An API to interact with the GPT-J language model. You can use and test the model in two different ways:
 
+* Streamlit web app at http://api.vicgalle.net:8000/ 
+* The proper API, documented at http://api.vicgalle.net:5000/docs
+
+## Using the API
+
+* Bash:
+
+```
+curl -X 'POST' \
+  'http://api.vicgalle.net:5000/generate?context=In%20a%20shocking%20finding%2C%20scientists%20discovered%20a%20herd%20of%20unicorns%20living%20in%20a%20remote%2C%20previously%20unexplored%20valley%2C%20in%20the%20Andes%20Mountains.%20Even%20more%20surprising%20to%20the%20researchers%20was%20the%20fact%20that%20the%20unicorns%20spoke%20perfect%20English.&token_max_length=512&temperature=1&top_p=0.9' \
+  -H 'accept: application/json' \
+  -d ''
+```
+
+* Python:
+
+```
+import requests
+context = "In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."
+payload = {
+    "context": context,
+    "token_max_length": 512,
+    "temperature": 1.0,
+    "top_p": 0.9,
+}
+response = requests.post("http://api.vicgalle.net:5000/generate", params=payload).json()
+print(response)
+```
 
 ## Deployment of the API
 
