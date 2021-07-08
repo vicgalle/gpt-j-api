@@ -21,7 +21,7 @@ python3 serve.py
 
 Then, you can go to http://localhost:5000/docs and use the API!
 
-## Deploy the app
+## Deploy the app
 
 Just run
 
