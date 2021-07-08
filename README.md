@@ -2,7 +2,7 @@
 A FastAPI server for the GPT-J language model. You can test and use the API at http://api.vicgalle.net:5000/docs
 
 
-## Deployment
+## Deployment of the API
 
 Just ssh into a TPU VM. This code was only tested on the v3-8 variants, which you can apply for free at https://sites.research.google/trc/.
 
@@ -20,3 +20,11 @@ python3 serve.py
 ```
 
 Then, you can go to http://localhost:5000/docs and use the API!
+
+## Deploy the app
+
+Just run
+
+```
+streamlit run streamlit_app.py
+```
