@@ -7,3 +7,4 @@ dm-haiku
 einops~=0.3.0
 fastapi
 uvicorn
+streamlit~=0.84.0
