@@ -56,3 +56,8 @@ Just run
 ```
 streamlit run streamlit_app.py
 ```
+
+
+## Acknowledgements
+
+Thanks to the support of the TPU Research Cloud, https://sites.research.google/trc/
