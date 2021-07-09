@@ -45,7 +45,10 @@ A:""",
         "Or write your own prompt here!", example, max_chars=2000, height=150
     )
 
-    rec = ex_names.index(inp)
+    try:
+        rec = ex_names.index(inp)
+    except ValueError:
+        rec = 0
 
     with st.beta_expander("Generation options..."):
         length = st.slider(
@@ -56,7 +59,7 @@ A:""",
             10,
         )
         temp = st.slider(
-            "Choose the temperature (higher - more random, lower - more repetitive). For the code generation or sentence classification promps it's recommended to use a lower value, like 0.2",
+            "Choose the temperature (higher - more random, lower - more repetitive). For the code generation or sentence classification promps it's recommended to use a lower value, like 0.35",
             0.0,
             1.5,
             1.0 if rec < 2 else 0.35,
