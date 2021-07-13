@@ -90,7 +90,7 @@ async def generate(
     response["compute_time"] = time.time() - start
     response["text"] = text
     response["prompt"] = context
-
+    print(response)
     return response
 
 
