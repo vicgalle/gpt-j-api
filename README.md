@@ -54,7 +54,7 @@ Then, you can go to http://localhost:5000/docs and use the API!
 Just run
 
 ```
-streamlit run streamlit_app.py
+python3 -m streamlit run streamlit_app.py --server.port 8000
 ```
 
 
