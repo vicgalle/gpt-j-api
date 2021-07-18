@@ -64,7 +64,8 @@ async def generate(
     top_p: Optional[float] = 0.9,
 ):
     start = time.time()
-
+    if token_max_length > 2048:
+        return {'text':"Don't abuse the API, please."}
     tokens = tokenizer.encode(context)
     provided_ctx = len(tokens)
     pad_amount = seq - provided_ctx
