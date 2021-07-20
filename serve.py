@@ -62,7 +62,7 @@ async def generate(
     token_max_length: Optional[int] = 512,
     temperature: Optional[float] = 1.0,
     top_p: Optional[float] = 0.9,
-    stop_sequence: Optional[str] = None
+    stop_sequence: Optional[str] = None,
 ):
     start = time.time()
     if token_max_length > 2048:
