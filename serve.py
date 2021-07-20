@@ -88,7 +88,7 @@ async def generate(
     text = tokenizer.decode(output[1][0][0, :, 0])
 
     # A simple technique to stop at stop_sequence without modifying the underlying model
-    if stop_sequence is not None:
+    if stop_sequence is not None and text.contains(stop_sequence):
         text = text.split(stop_sequence)[0] + stop_sequence
 
     response = {}
