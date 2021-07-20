@@ -62,6 +62,7 @@ async def generate(
     token_max_length: Optional[int] = 512,
     temperature: Optional[float] = 1.0,
     top_p: Optional[float] = 0.9,
+    stop_sequence: Optional[str] = None,
 ):
     start = time.time()
     if token_max_length > 2048:
@@ -86,6 +87,10 @@ async def generate(
 
     text = tokenizer.decode(output[1][0][0, :, 0])
 
+    # A simple technique to stop at stop_sequence without modifying the underlying model
+    if stop_sequence is not None and stop_sequence in text:
+        text = text.split(stop_sequence)[0] + stop_sequence
+
     response = {}
     response["model"] = "GPT-J-6B"
     response["compute_time"] = time.time() - start
@@ -94,6 +99,7 @@ async def generate(
     response["token_max_length"] = token_max_length
     response["temperature"] = temperature
     response["top_p"] = top_p
+    response["stop_sequence"] = stop_sequence
 
     print(response)
     return response
