@@ -91,6 +91,10 @@ async def generate(
     response["compute_time"] = time.time() - start
     response["text"] = text
     response["prompt"] = context
+    response["token_max_length"] = token_max_length
+    response["temperature"] = temperature
+    response["top_p"] = top_p
+    
     print(response)
     return response
 
