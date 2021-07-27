@@ -1,0 +1,24 @@
+name: API up
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron:  '*/15 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+        - 'pypy-3.7' # the latest available version of PyPy that supports Python 3.7
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - run: python -m pip install pytest requests
+    - name: Perform tests
+      run: pytest
