@@ -1,4 +1,6 @@
 # gpt-j-api
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/vicgalle/gpt-j-api?color=blueviolet)
+
 An API to interact with the GPT-J language model. You can use and test the model in two different ways:
 
 * Streamlit web app at http://api.vicgalle.net:8000/ 
