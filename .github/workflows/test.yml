@@ -12,6 +12,6 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - run: python -m pip install pytest
+    - run: python -m pip install pytest requests
     - name: Perform tests
       run: pytest
