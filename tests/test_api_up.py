@@ -1,5 +1,6 @@
 import requests
 
+
 def test_api_running():
     context = "test"
     payload = {
@@ -8,6 +9,8 @@ def test_api_running():
         "temperature": 0.0,
         "top_p": 0.0,
     }
-    response = requests.post("http://api.vicgalle.net:5000/generate", params=payload).json()
+    response = requests.post(
+        "http://api.vicgalle.net:5000/generate", params=payload
+    ).json()
 
-    assert len(response['text']) > 0
+    assert len(response["text"]) > 0
