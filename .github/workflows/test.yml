@@ -1,10 +1,12 @@
 name: API up
 on: 
-  push
-  workflow_dispatch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   schedule:
     - cron:  '*/15 * * * *'
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
