@@ -1,6 +1,7 @@
 # gpt-j-api
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/vicgalle/gpt-j-api?color=blueviolet)
 ![Python version](https://img.shields.io/badge/python-3.7-blueviolet)
+![API up](https://github.com/vicgalle/gpt-j-api/actions/workflows/test.yml/badge.svg)
 
 
 An API to interact with the GPT-J language model. You can use and test the model in two different ways:
