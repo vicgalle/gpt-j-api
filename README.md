@@ -37,7 +37,7 @@ curl -X 'POST' \
 
 ## Deployment of the API server
 
-Just ssh into a TPU VM. This code was only tested on the v3-8 variants, which you can apply for free at https://sites.research.google/trc/.
+Just ssh into a TPU VM. This code was only tested on the v3-8 variants.
 
 First, install the requirements and get the weigts:
 ```
