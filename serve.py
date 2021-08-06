@@ -65,10 +65,10 @@ async def generate(
     stop_sequence: Optional[str] = None,
 ):
     start = time.time()
-    if token_max_length > 2048:
-        return {"text": "Don't abuse the API, please."}
     tokens = tokenizer.encode(context)
     provided_ctx = len(tokens)
+    if token_max_length + provided_ctx > 2048:
+        return {"text": "Don't abuse the API, please."}
     pad_amount = seq - provided_ctx
 
     padded_tokens = np.pad(tokens, ((pad_amount, 0),)).astype(np.uint32)
