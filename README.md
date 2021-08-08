@@ -4,7 +4,7 @@
 ![API up](https://github.com/vicgalle/gpt-j-api/actions/workflows/test.yml/badge.svg)
 
 
-An API to interact with the GPT-J language model. You can use and test the model in two different ways:
+An API to interact with the GPT-J language model and variants! You can use and test the model in two different ways:
 
 * Streamlit web app at http://api.vicgalle.net:8000/ 
 * The proper API, documented at http://api.vicgalle.net:5000/docs
