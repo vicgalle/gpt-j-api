@@ -9,6 +9,19 @@ An API to interact with the GPT-J language model. You can use and test the model
 * Streamlit web app at http://api.vicgalle.net:8000/ 
 * The proper API, documented at http://api.vicgalle.net:5000/docs
 
+## Open API endpoints
+
+These are the endpoints of the public API and require no authentication.
+Click on each to see the parameters!
+
+#### GPT-J text generation
+
+* generate : `POST /generate/`
+
+#### Zero-shot text classification (multilingual)
+
+* classify : `POST /classify/`
+
 ## Using the API
 
 * Python:
