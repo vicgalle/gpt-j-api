@@ -53,7 +53,6 @@ http://api.vicgalle.net:5000/docs#/default/generate_classify_post
 
 ```python
 import requests
-context = "In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."
 payload = { 
     "sequence" : "The movie started slow, but in the end was absolutely amazing!", 
     "labels" : "positive,neutral,negative"}
