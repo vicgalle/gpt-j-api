@@ -26,7 +26,7 @@ Click on each to see the parameters!
 
 * Python:
 
-```
+```python
 import requests
 context = "In a shocking finding, scientist discovered a herd of unicorns living in a remote, previously unexplored valley, in the Andes Mountains. Even more surprising to the researchers was the fact that the unicorns spoke perfect English."
 payload = {
@@ -39,9 +39,20 @@ response = requests.post("http://api.vicgalle.net:5000/generate", params=payload
 print(response)
 ```
 
+* Python (zero-shot classification):
+
+```python
+import requests
+payload = { 
+    "sequence" : "The movie started slow, but in the end was absolutely amazing!", 
+    "labels" : "positive,neutral,negative"}
+response = requests.post("http://api.vicgalle.net:5000/classify", params=payload).json()
+print(response)
+```
+
 * Bash:
 
-```
+```bash
 curl -X 'POST' \
   'http://api.vicgalle.net:5000/generate?context=In%20a%20shocking%20finding%2C%20scientists%20discovered%20a%20herd%20of%20unicorns%20living%20in%20a%20remote%2C%20previously%20unexplored%20valley%2C%20in%20the%20Andes%20Mountains.%20Even%20more%20surprising%20to%20the%20researchers%20was%20the%20fact%20that%20the%20unicorns%20spoke%20perfect%20English.&token_max_length=512&temperature=1&top_p=0.9' \
   -H 'accept: application/json' \
