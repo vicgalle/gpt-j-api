@@ -80,7 +80,7 @@ A:""",
             }
 
             query = requests.post(
-                "http://api.vicgalle.net:5000/generate", params=payload
+                "http://localhost:5000/generate", params=payload
             )
             response = query.json()
 
