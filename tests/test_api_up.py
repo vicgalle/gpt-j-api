@@ -10,7 +10,7 @@ def test_api_running():
         "top_p": 0.0,
     }
     response = requests.post(
-        "http://api.vicgalle.net:5000/generate", params=payload
+        "http://***REMOVED***:5000/generate", params=payload
     ).json()
 
     assert len(response["text"]) > 0
