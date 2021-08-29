@@ -5,6 +5,7 @@ git+https://github.com/kingoflolz/mesh-transformer-jax.git#egg=mesh-transformer
 smart_open[gcs]
 dm-haiku
 einops~=0.3.0
+ray
 fastapi
 uvicorn
 streamlit~=0.84.0
