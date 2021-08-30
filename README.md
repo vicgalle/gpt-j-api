@@ -63,7 +63,7 @@ curl -X 'POST' \
 
 Just ssh into a TPU VM. This code was only tested on the v3-8 variants.
 
-First, install the requirements and get the weigts:
+First, install the requirements and get the weights:
 ```
 python3 -m pip install -r requirements.txt
 wget https://the-eye.eu/public/AI/GPT-J-6B/step_383500_slim.tar.zstd
