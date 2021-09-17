@@ -61,9 +61,9 @@ curl -X 'POST' \
 
 ## Deployment of the API server
 
-Just ssh into a TPU VM. This code was tested on both the v2-8 and v3-8 variants.
+Just SSH into a TPU VM. This code was tested on both the v2-8 and v3-8 variants.
 
-First, install the requirements and get the weigts:
+First, install the requirements and get the weights:
 ```
 python3 -m pip install -r requirements.txt
 wget https://the-eye.eu/public/AI/GPT-J-6B/step_383500_slim.tar.zstd
