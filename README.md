@@ -92,6 +92,13 @@ python3 -m streamlit run streamlit_app.py --server.port 8000
 If you have a request, I'll be happy to help you at `vgallegoalcala at gmail dot com`
 
 
-## Acknowledgements
+## Sponsors 🦄
 
-Thanks to the support of the TPU Research Cloud, https://sites.research.google/trc/
+Special thanks to the following people, who sponsor this project! <3
+
+* [Aspie96](https://github.com/Aspie96)
+
+
+## Acknowledgements ✨
+
+Many thanks to the support of the TPU Research Cloud, https://sites.research.google/trc/
