@@ -23,6 +23,10 @@ Click on each to see the parameters!
 
 * [classify](docs/classify.md) : `POST /classify/`
 
+#### Semantic search (multilingual) 🔍
+
+* [semsearch](docs/semsearch.md) : `POST /semsearch/`
+
 ## Using the API 🔥
 
 * Python:
